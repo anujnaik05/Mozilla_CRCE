@@ -42,9 +42,9 @@ export default function Team() {
       {/* Third row with 5 cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12">
         <TeamCard name="Aarna Chopdekar" role="SE Representative" img="/Images/Team/SE_Rep.png" />
-        <TeamCard name="Anaay Vakharkar" role="Jr. Tech Head" img="/Images/Team/jr_Tech.png" />
-        <TeamCard name="Sanika Gunjal" role="Design Head" img="/Images/Team/Design_Head.png" />
-        <TeamCard name="Arya Chavan" role="Documentation Head" img="/Images/Team/Doc_Head.png" />
+        <TeamCard name="Anaay Vakharkar" role="Jr. Tech Head" img="/Images/Team/Jr_Tech.png" />
+        <TeamCard name="Sanika Gunjal" role="Design Head" img="/Images/Team/Design_head.png" />
+        <TeamCard name="Arya Chavan" role="Documentation Head" img="/Images/Team/Doc_head.png" />
         <TeamCard name="Wayne Falcao" role="Digital Content Head" img="/Images/Team/wane.jpeg" />
       </div>
     </div>

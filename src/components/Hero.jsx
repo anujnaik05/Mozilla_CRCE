@@ -55,7 +55,7 @@ export default function Hero() {
     localGameOver.current = false;
 
     const birdImg = new Image();
-    birdImg.src = "/Images/logo/Mozilla_logo.jpg";
+    birdImg.src = "/Images/logo/Mozilla_Logo.jpg";
 
     function drawBird() {
   const size = 55; // same as before
