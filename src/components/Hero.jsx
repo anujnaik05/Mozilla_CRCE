@@ -172,7 +172,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col items-center">
             <img
               id="logo"
-              src="/Images/logo/Mozilla_logo.jpg"
+              src="/Images/logo/Mozilla_Logo.jpg"
               alt="Council Logo"
               onClick={handleStart}
               className={`w-40 h-40 cursor-pointer rounded-full shadow-lg border-4 border-blue-400 ${
