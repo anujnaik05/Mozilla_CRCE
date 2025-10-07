@@ -1,13 +1,248 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ------------------------------------------------------------------
+  src/index.css
+  - Tailwind + custom neon theme and cursor styles for Mozilla Club
+  - Save this file as src/index.css
+  ------------------------------------------------------------------ */
+
+/* Tailwind foundations (required) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------ Basic fonts & layout ------------------ */
+/* (You can import Google fonts in index.html if you want Orbitron/Inter) */
+:root {
+  --neo-blue: #00f0ff;     /* main neon */
+  --neo-blue-2: #00d4ff;   /* secondary */
+  --neo-weak: rgba(0,240,255,0.06);
+  --bg-dark: #020203;
+  --card-bg: #0b0b0c;
+  --muted: #9aa6ad;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* full-height root */
+html, body, #root {
+  height: 100%;
+}
+
+/* page background and base text */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 35% 30%, rgba(8,10,11,0.6), rgba(2,2,3,1) 60%);
+  color: #e6eef1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  margin: 0;
+  
+}
+
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ------------------ Neon headings & helpers ------------------ */
+.neon {
+  color: #eafcff;
+  text-shadow:
+    0 0 6px rgba(0,240,255,0.12),
+    0 0 18px rgba(0,208,255,0.06),
+    0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* page display font usage if you defined font-display in tailwind */
+.font-display { font-family: "Orbitron", Inter, system-ui, sans-serif; }
+
+/* muted text */
+.text-muted { color: var(--muted); }
+
+/* ------------------ Card / border glow ------------------ */
+.neon-border {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  border: 1px solid rgba(0,240,255,0.10);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,240,255,0.02),
+    0 10px 30px rgba(0,240,255,0.02);
+}
+
+/* subtle cyan inner outline */
+.outline-cyan {
+  box-shadow: inset 0 0 0 1px rgba(0,240,255,0.06);
+}
+
+/* small underline used inside cards (thin cyan line) */
+.card-sep {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,240,255,0.12), rgba(0,240,255,0.04));
+  margin: 12px 0;
+}
+
+/* anchor hover glow */
+a {
+  transition: color 160ms ease, text-shadow 160ms ease, transform 160ms ease;
+}
+a:hover {
+  color: var(--neo-blue);
+  text-shadow: 0 0 10px rgba(0,240,255,0.18);
+}
+
+/* headline sizes (use with tailwind classes too) */
+.h1-neon {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+/* small helper for subdued paragraphs */
+.lead-muted {
+  color: #c9d6d9;
+  max-width: 56ch;
+}
+
+/* ------------------ Buttons ------------------ */
+.btn-primary {
+  background: linear-gradient(180deg, rgba(0,240,255,0.14), rgba(0,208,255,0.08));
+  color: #021018;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 6px 18px rgba(0,240,255,0.04);
+  border: 1px solid rgba(0,240,255,0.18);
+}
+.btn-ghost {
+  background: transparent;
+  color: #dff9ff;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,240,255,0.08);
+}
+
+/* ------------------ Images ------------------ */
+img.object-contain { object-fit: contain; }
+img.object-cover { object-fit: cover; }
+
+/* ------------------ Layout helpers for sections ------------------ */
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-tight { padding-top: 3rem; padding-bottom: 3rem; }
+
+/* container max width (consistent across components) */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* ------------------ Custom cursor (dot + trailing ring) ------------------ */
+/* dot */
+.cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--neo-blue);
+  box-shadow:
+    0 0 12px rgba(0,240,255,0.95),
+    0 0 30px rgba(0,200,255,0.18),
+    0 6px 24px rgba(0,0,0,0.6);
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 150ms ease, height 150ms ease, opacity 160ms ease, transform 120ms ease;
+  z-index: 9999;
+  opacity: 1;
+  will-change: transform;
+}
+
+/* ring */
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1.6px solid rgba(0,240,255,0.18);
+  background: radial-gradient(circle at 30% 30%, rgba(0,240,255,0.06), transparent 45%);
+  box-shadow:
+    0 0 28px rgba(0,240,255,0.12),
+    0 0 60px rgba(0,240,255,0.06);
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 220ms cubic-bezier(.2,.9,.2,1), height 220ms cubic-bezier(.2,.9,.2,1), opacity 160ms ease;
+  z-index: 9998;
+  opacity: 1;
+  will-change: transform;
+}
+
+/* pulse when active / moving */
+.cursor-ring-active {
+  width: 46px !important;
+  height: 46px !important;
+  border-width: 1.9px !important;
+  box-shadow:
+    0 0 40px rgba(0,240,255,0.18),
+    0 0 90px rgba(0,200,255,0.08);
+}
+
+/* hide default cursor (desktop only) */
+@media (pointer: fine) {
+  body { cursor: none; }
+}
+
+/* hide custom cursor on touch / coarse devices */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+  body { cursor: auto; }
+}
+
+/* ------------------ Small responsive tweaks ------------------ */
+@media (max-width: 768px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  .h1-neon { font-size: 2rem; }
+  .section { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* ------------------ Utility if you want hover-grow effect on clickable items */
+.hover-grow:hover {
+  transform: translateY(-6px) scale(1.02);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* ------------------ Accessibility helpers ------------------ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: rgba(0,0,0,0.9);
+  border: 1px solid rgba(255,255,255,0.06);
+  z-index: 99999;
+}
+
+/* ------------------ Example small helpers you might use ------------------ */
+.center-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .center-grid { grid-template-columns: repeat(1, 1fr); }
 }
