@@ -33,7 +33,7 @@ export default function Contact() {
       {/* Logo + Council */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
         <img
-          src="/Images/logo/Mozilla_logo.jpg"
+          src="/Images/logo/Mozilla_Logo.jpg"
           alt="Mozilla Logo"
           className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2"
           style={{ borderColor: "#00BFFF", boxShadow: "0 0 15px #00BFFF" }}
