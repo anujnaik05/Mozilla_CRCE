@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full flex justify-between items-center px-6 sm:px-8 py-4 bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-md z-50 border-b border-blue-700/20 shadow-lg">
       {/* Responsive Title */}
-      <div className="font-extrabold text-blue-400 drop-shadow-md leading-tight">
+      <div className="font-extrabold text-cyan-400 drop-shadow-md leading-tight">
         {/* Mobile: Mozilla Campus / Club on next line */}
         <span className="block sm:hidden text-lg leading-tight">
           Mozilla Campus

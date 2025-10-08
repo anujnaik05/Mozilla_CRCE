@@ -13,9 +13,9 @@ export default function Contact() {
       <div className="flex flex-wrap justify-center gap-x-20 gap-y-6 text-gray-300 text-lg md:text-xl">
         {[
           { icon: "📧", label: "Mozilla.club@example.com", href: "mailto:mozilla.club@example.com" },
-          { icon: "🔗", label: "LinkedIn", href: "https://linkedin.com" },
-          { icon: "💻", label: "GitHub", href: "https://github.com" },
-          { icon: "📸", label: "Instagram", href: "https://instagram.com" },
+          { icon: "🔗", label: "LinkedIn", href: "https://www.linkedin.com/in/mozilla-campus-club-crce-7a1884222?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+          { icon: "💻", label: "GitHub", href: "https://github.com/mozillaclub" },
+          { icon: "📸", label: "Instagram", href: "https://www.instagram.com/mozillacampuscrce?igsh=MW1lamc2czIyYXQ1Zw==" },
         ].map((item) => (
           <a
             key={item.label}
