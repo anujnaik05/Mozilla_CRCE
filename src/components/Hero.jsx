@@ -278,7 +278,7 @@ export default function Hero() {
     velocity.current = 0;
     pipes.current = [];
     frame.current = 160;
-    score.current = 0;
+    
     localGameOver.current = false;
 
     const birdSize = width * 0.08; // scale bird
@@ -350,7 +350,7 @@ export default function Hero() {
 
       ctx.fillStyle = "white";
       ctx.font = `${width * 0.035}px Arial`;
-      ctx.fillText("Score: " + score.current, 20, 40);
+      
 
       frame.current++;
       animationRef.current = requestAnimationFrame(update);
