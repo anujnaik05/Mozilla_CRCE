@@ -61,7 +61,7 @@ export default function Events() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <EventCard
             title="CodeCraft"
-            images={["/Images/Events/Crescendo/part1.png", "/image2.jpg", "/image3.jpg"]}
+            images={["/Images/Events/codeCraft/part1.png", "/Images/Events/codeCraft/part1.png", "/Images/Events/codeCraft/part1.png"]}
             description="A 24-hour coding marathon where students build open-source projects."
           />
         </div>
