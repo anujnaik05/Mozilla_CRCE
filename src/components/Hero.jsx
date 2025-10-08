@@ -404,7 +404,7 @@ export default function Hero() {
             />
             {!falling && (
               <p className="mt-6 text-xl font-semibold text-white animate-pulse">
-                🎉 Click on the logo for some fun! 😎🚀
+                🎉Click on the logo for some fun!😎🚀
               </p>
             )}
           </div>
